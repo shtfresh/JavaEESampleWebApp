@@ -6,13 +6,12 @@
 
 <%@page import="oracle.com.bean.Infomation"%>
 <%@page import="java.util.List"%>
-<%@page import="java.util.List"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>自転車一覧</title>
     </head>
     <body>
         <div style="width: 500px;margin: 0 auto;">
@@ -21,7 +20,7 @@
             <h4 style="text-align: center">登録されたデータ一覧</h4>
 
             <table style="width:100%" border="1">
-                <tr style="background-color: bisque"><th>自動車ナンバー</th><th>名前</th><th>住所</th></tr>
+                <tr style="background-color: bisque"><th>自転車登録ナンバー</th><th>名前</th><th>住所</th></tr>
                 <%
                     List<Infomation> infomationList = (List<Infomation>) request.getAttribute("infomationList");
                     if (infomationList != null) {
