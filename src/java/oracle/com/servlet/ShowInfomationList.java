@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package oracle.com.servlet;
 
 import java.io.IOException;
@@ -19,31 +14,29 @@ import oracle.com.service.InfomationService;
  * @author tasheng
  */
 public class ShowInfomationList extends HttpServlet {
-    
-    	public ShowInfomationList() {
+
+    public ShowInfomationList() {
         super();
     }
 
     public void destroy() {
-        super.destroy(); 
+        super.destroy();
     }
 
-    
-        public void doGet(HttpServletRequest request, HttpServletResponse response)
+    public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
-    	 doPost(request, response);
+        doPost(request, response);
     }
 
     public void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        InfomationService infomationService =new InfomationService();
+        InfomationService infomationService = new InfomationService();
         List<Infomation> InfomationList = infomationService.showInfomationList();
-    	
-        request.setAttribute("infomationList",InfomationList);
-        request.getRequestDispatcher("WEB-INF/index.jsp").forward(request,response); 
+
+        request.setAttribute("infomationList", InfomationList);
+        request.getRequestDispatcher("WEB-INF/index.jsp").forward(request, response);
 
     }
-    
+
 }
